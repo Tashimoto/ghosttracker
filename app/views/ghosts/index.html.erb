@@ -1,0 +1,28 @@
+<h1>Ghosts#index</h1>
+
+<table id="ghosts-table">
+	<tr>
+		<th>Name</th>
+		<th>Location</th>
+		<th>Difficulty Level</th>
+		<th>Features</th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% @ghosts.each do |g| %>
+		<tr>
+			<td><%= g.name %></td>
+			<td><%= g.location %></td>
+			<td><%= g.difficulty_level %></td>
+			<td>
+				<% g.features.each do |f| %>
+					<%= f %>
+					<br>
+				<% end %>
+			</td>
+			<td><%= link_to 'Show', ghost_path(g) %></td>
+			<td><%= link_to 'Edit', edit_ghost_path(g) %></td>
+			<td><%= link_to 'Destroy', g, data: {:confirm => 'Delete this ghost?'}, :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
