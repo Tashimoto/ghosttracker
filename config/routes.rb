@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'ghosts' => 'ghosts#index'
-  get 'ghosts/:id' => 'ghosts#show', as: 'ghost'
   get 'ghosts/new'
+  get 'ghosts/:id' => 'ghosts#show', as: 'ghost'
   get 'ghosts/:id/edit' => 'ghosts#edit', as: 'edit_ghost'
-  post 'ghosts/create' 
+  post 'ghosts/' => 'ghosts#create' 
   patch 'ghosts/:id' => 'ghosts#update'
   delete 'ghosts/:id' => 'ghosts#destroy'
 

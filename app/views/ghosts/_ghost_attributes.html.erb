@@ -1,0 +1,16 @@
+<tr>
+  <td><%= ghost.name %></td>
+  <td><%= ghost.location %></td>
+  <td><%= ghost.difficulty %></td>
+  <td>
+    <% ghost.features.each do |f| %>
+      <%= f %>
+      <br>
+    <% end %>
+  </td>
+  <% if current_page? ghosts_path %>
+    <td><%= link_to 'Show', ghost_path(ghost) %></td>
+    <td><%= link_to 'Edit', edit_ghost_path(ghost) %></td>
+    <td><%= link_to 'Destroy', ghost, data: {:confirm => 'Delete this ghost?'}, :method => :delete %></td>
+  <% end %>
+</tr>

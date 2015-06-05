@@ -1,2 +1,22 @@
-<h1>Ghosts#new</h1>
-<p>Find me in app/views/ghosts/new.html.erb</p>
+<%= form_for @ghost do |f| %>
+
+
+  <div class= "field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class= "field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+  <div class= "field">
+    <%= f.label :difficulty %>
+    <%= f.text_field :difficulty %>
+  </div>
+  <div class= "field">
+    <%= f.label :features, "Features (separated by commas)" %>
+    <%= f.text_field :features %>
+  </div>
+  <%= f.submit "Add Ghost" %>
+
+<% end %>
