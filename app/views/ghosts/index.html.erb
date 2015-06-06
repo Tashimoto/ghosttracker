@@ -2,18 +2,21 @@
 
 <%= link_to 'Add Ghost', ghosts_new_path %>
 
+<body>
 
-<table id="ghosts-table">
-	<tr>
-		<th>Name</th>
-		<th>Location</th>
-		<th>Difficulty</th>
-		<th>Features</th>
-		<th></th>
-		<th></th>
-	</tr>
-	<% @ghosts.each do |g| %>
+  <table id="ghosts-table">
+  <tr>
+  	<th>Name</th>
+  	<th>Location</th>
+  	<th>Difficulty</th>
+  	<th>Features</th>
+  	<th></th>
+  	<th></th>
+  </tr>
+  <% @ghosts.each do |g| %>
     <!--partial -->
     <%= render "ghost_attributes", ghost: g %>
-	<% end %>
-</table>
+  <% end %>
+  </table>
+
+</body>

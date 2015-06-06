@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+html, body {
+  background-color: #3a4652;
+  background-size: 1000px 500px;
+}
+
+/*
+arcade {
+  position: relative;
+  top: 300px; 
+  left: 200px;
+}
+*/
