@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   private
   #through an http request, these are the only params that can be set
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation) 
   end
 
   def set_user

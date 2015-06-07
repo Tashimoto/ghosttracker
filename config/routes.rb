@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'login' => 'sessions#new', as: 'login'
+  post 'login' => 'sessions#create'
+
   get 'users/new', as: 'new_user'
   get 'users/:id' => 'users#show', as: 'user'
   post 'users/' => 'users#create'
