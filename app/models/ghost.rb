@@ -9,6 +9,7 @@
 #  features   :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Ghost < ActiveRecord::Base
@@ -17,7 +18,7 @@ class Ghost < ActiveRecord::Base
 
   serialize :features, Array
 
-  #belongs_to :user
+  belongs_to :user
 
 
 end

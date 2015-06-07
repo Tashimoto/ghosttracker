@@ -14,11 +14,14 @@
  *= require_self
  */
 
-html, body {
-  background-color: #3a4652;
-  background-size: 1000px 500px;
-}
 
+
+/*
+logo {
+  position: absolute;
+  top: 200px;
+}
+*/
 /*
 arcade {
   position: relative;

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/new', as: 'new_user'
+  get 'users/show'
+
   get 'ghosts' => 'ghosts#index'
   get 'ghosts/new'
   get 'ghosts/:id' => 'ghosts#show', as: 'ghost'
