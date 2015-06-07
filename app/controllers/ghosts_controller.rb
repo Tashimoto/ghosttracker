@@ -36,7 +36,7 @@ class GhostsController < ApplicationController
   private
   #through an http request, these are the only params that can be set
   def ghost_params
-    params.require(:ghost).permit(:name, :location, :difficulty, :features => [])
+    params.require(:ghost).permit(:name, :location, :difficulty, :user_id, :features => [])
   end
 
   def set_ghost
