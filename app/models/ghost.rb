@@ -10,6 +10,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :integer
+#  image_url  :string
 #
 
 class Ghost < ActiveRecord::Base
@@ -19,6 +20,8 @@ class Ghost < ActiveRecord::Base
   serialize :features, Array
 
   belongs_to :user
+
+  scope :untargeted, -> {where(user_id: nil)}
 
 
 end

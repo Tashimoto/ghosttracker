@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
   get 'login' => 'sessions#new', as: 'login'
   post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
   get 'users/new', as: 'new_user'
   get 'users/:id' => 'users#show', as: 'user'
   post 'users/' => 'users#create'
 
   get 'ghosts' => 'ghosts#index'
-  get 'ghosts/new'
+  get 'ghosts/new', as: 'new_ghost'
+  get 'ghosts/set_user' => 'ghosts#set_user', as: 'set_ghost_user'
   get 'ghosts/:id' => 'ghosts#show', as: 'ghost'
   get 'ghosts/:id/edit' => 'ghosts#edit', as: 'edit_ghost'
   post 'ghosts/' => 'ghosts#create' 
   patch 'ghosts/:id' => 'ghosts#update'
   delete 'ghosts/:id' => 'ghosts#destroy'
+
 
   #resources 'ghosts'   <- I can do this instead of the above for simplicity
 

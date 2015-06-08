@@ -2,3 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#home-buttons {
+  margin-bottom: 40px;
+}
+
+.ghost-wrap {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  vertical-align: top;
+  img{
+    width: 200px;
+  }
+}

@@ -1,3 +1,24 @@
 <table id="ghost-table">
+  <tr> 
+    <th>Name</th>
+    <th>Location</th>
+    <th>Difficulty</th>
+    <th>Features</th>
+  </tr>
   <%= render "ghost_attributes", ghost: @ghost %>
 </table>
+
+<div id="ghost-tracked">
+  This ghost is being tracked by 
+  <% if @ghost.user %>
+    <%= link_to @ghost.user.username, user_path(@ghost.user)%>.
+  <% elsif current_user %>
+    nobody. <%= link_to "Track this ghost?", set_ghost_user_path(id: @ghost.id) %>
+  <% else %>
+    nobody. Please <%= link_to "log in", login_path %> or <%= link_to "join", new_user_path %> to track this ghost.
+  <% end %>
+</div>
+
+<% if current_user && @ghost.user == current_user %>
+  <%= link_to 'Destroy Ghost', ghosts_path, method: :delete, class: "button" %>
+<% end %>

@@ -15,7 +15,18 @@
   </div>
   <div class= "field">
     <%= f.label :features, "Features (separated by commas)" %>
-    <%= f.text_field :features %>
+    <%= f.text_field :features, value: features_to_string(@ghost) %>
+  </div>
+  <div class= "field">
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class= "field">
+    <%= radio_button_tag :belongs_to_user, true, true %>
+    <%= f.label :belongs_to_user, "Add this ghost to your own Target List" %><br>
+    <%= radio_button_tag :belongs_to_user, false %>
+    <%= f.label :belongs_to_user, "Add this ghost to Public List" %>
+
   </div>
   <%= f.submit "Add Ghost", class: "button" %>
 
