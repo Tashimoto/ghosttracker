@@ -1,5 +1,5 @@
 class GhostsController < ApplicationController
-  before_action :set_ghost, only: [:show, :edit, :destroy, :update, :set_ghost] #DRY code
+  before_action :set_ghost, only: [:show, :edit, :destroy, :update, :set_user] #DRY code
 
   def index
   	@ghosts = Ghost.all
