@@ -7,14 +7,15 @@
 
     <%= link_to "Log In", login_path, class: "button" %>
   </div>
+  
+<% end %>
 
   <h2>These ghosts are not yet being tracked. Click on a ghost to view its info.</h2>
 
   <% @ghosts.each do |ghost| %>
     <div class="ghost-wrap">
-      <img src= "<%= ghost.image_url ? ghost.image_url : 'http://securityaffairs.co/wordpress/wp-content/uploads/2015/01/Ghost-vulnerability.png' %>" />
+      <img src= "<%= ghost.image_url ? ghost.image_url : 'http://securityaffairs.co/wordpress/wp-content/uploads/2015/01/Ghost-vulnerability.png'  %>" />
       <h3> <%= link_to ghost.name, ghost_path(ghost) %>
     </div>
   <% end %>
 
-<% end %>
