@@ -10,7 +10,7 @@
 
 <% end %>
 
-  <h3>These ghosts are not yet being tracked. Click on a ghost to view its info, or <%= link_to "add a ghost", new_ghost_path %> to the database.</h3>
+  <h3>These ghosts are not yet being tracked. Click on a ghost to view its info, or  <%= link_to "Add Ghost", new_ghost_path, class: "button" %></h3>
 
   <% @ghosts.each do |ghost| %>
     <div class="ghost-wrap">
