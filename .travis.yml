@@ -3,16 +3,16 @@ rvm:
 - 2.0.0-p481
 branches:
   only:
-    - master
+  - master
 install:
-  - "travis_retry bundle install"
+- travis_retry bundle install
 before_script:
 - psql -c 'create database ghostbusters_test;' -U postgres
 deploy:
   provider: heroku
   api_key:
-    secure: KxoeHbmu3K4czIjYv/MdfDloLgU2MzT9VrviiNfEc08if9U+brOHFC4pKAB9e63omxpojB3dNHGwMeKPccOSHpAxPvQJ0UK4+mcgi1eLjRCtHsu3K88tLoesAFDW/cXKxpLkIEOtPS72o3t+lNdBA60cqOAP87fb0y5ULSBLtqQ=
-  app: travis-test-app
+    secure: IPHKNpojLEJptRzsFDh9sZ2o01O0b+aJhcPFsWIWjC+roJwJYvy05PR93jvIHx/IMsKf7fpGtb947ANarILNm5GzvivGz/5hNETtEJ2nrsxfj3yCZtW64wQMlztqWaMP9YN5GanfzPli7qKEDgYro6oHNeVIRW++63bLpFHrySKnb8gBo9ewRunhPWY9cvSdJ6wAHiaxex2FOw0zF7K2im3Or77c+NR35vIzsde/s4/CC1ymf3cwpyn+LYEjh0g0annodvfBVfK0Mtps0oSjjsQzWGdUUKNRaVrCnZso55AWhcMzZwcoVpr5us+PYDTOWLOTcEvmOqnuEJCn6UQ4a6eokkppFr/LPONeTax5kG4qt9rrHNfB2vSWGkiZa38OCMzuhORme0L4uPhWS0g04eoyZjDoxWZTQifrf1aF2exSbS6i6Y3KAlBqrnJCf3I3hToPavXcYVAZaHKLHpqHWtLjw4aXVocWSRMecpmlOzo/9L9W2zNcn4H6DJdN8aLOsC/XRLibGgC7glJFGTDNgK5seQ4C5RAIn3RD00f0Ue1doDH6qe2CNutk/5W+NuT+eFViRxf7E8EbkgtNMmGXJPAbPSLQHs+U4c1u10YJ6noyMFLMVK9KcDpK01EPPy/XJFdLBVN4sdhX/qh0D9BcKuBMss+sbiAvaG/w7fdacIk=
+  app: travistestapp
   run:
-    - "rake db:migrate"
-    - restart
+  - rake db:migrate
+  - restart
