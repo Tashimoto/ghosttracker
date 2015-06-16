@@ -13,4 +13,6 @@
 class User < ActiveRecord::Base
     has_many :ghosts
     has_secure_password
+    validates :email, presence: true, uniqueness: { case_sensitive: false }, length: {in: 5..50}, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+    validates :password, presence: true, length: {in: 5..50}
 end
