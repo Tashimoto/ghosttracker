@@ -1,5 +1,5 @@
 class GuestPagesController < ApplicationController
-  def home
+  def home#
     @ghosts = Ghost.untargeted
   end
 end
